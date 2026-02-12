@@ -16,7 +16,9 @@ async def getUser( userId : str , db = Depends(get_database) ):
 
     user = await db.users.find_one({ "_id" : ObjectId(userId) })
     return user
-
+@router.get("/getall")
+async def getAllUser():
+    return {"response" : "nothing"}
 
      
 
