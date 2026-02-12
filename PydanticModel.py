@@ -12,12 +12,12 @@ class UserRequest(BaseModel):
     model_config = ConfigDict(
         validate_by_name=True,          
         arbitrary_types_allowed=True,
-        json_encoders={ObjectId: str}
+        
     )
         
 
 class UserResponse(BaseModel):
-    id : Optional[PyObjectId] = Field(alias = "_id")
+    id : str = Field(alias = "_id")
     name : str
     age : int
     address : str
@@ -26,7 +26,7 @@ class UserResponse(BaseModel):
     model_config = ConfigDict(
         validate_by_name=True,          
         arbitrary_types_allowed=True,
-        json_encoders={ObjectId: str}
+        
     )
         
    
@@ -37,13 +37,13 @@ class ItemRequest(BaseModel):
     model_config = ConfigDict(
         validate_by_name=True,         
         arbitrary_types_allowed=True,
-        json_encoders={ObjectId: str}
+        
     )
         
     
 
 class ItemResponse(BaseModel):
-    id : Optional[PyObjectId] = Field(alias = "_id")
+    id : str = Field(alias = "_id")
     noOfItem : int
     name :str
     fromApi : bool
@@ -51,7 +51,7 @@ class ItemResponse(BaseModel):
     model_config = ConfigDict(
         validate_by_name=True,         
         arbitrary_types_allowed=True,
-        json_encoders={ObjectId: str}
+      
     )
         
 
